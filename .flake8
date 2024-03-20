@@ -109,7 +109,7 @@ exclude =
   ./env,
   ./cached_venv,
   ./docs,
-  ./k8s,
+  ./docker,
   ./var,
   ./.vscode,
   *migrations*,

@@ -24,14 +24,14 @@ You can read more about poetry here: https://python-poetry.org/
 You can start the project with docker using this command:
 
 ```bash
-docker-compose -f k8s/docker-compose.yml --project-directory . up --build
+docker-compose -f docker/docker-compose.yml --project-directory . up --build
 ```
 
-If you want to develop in docker with autoreload add `-f k8s/docker-compose.dev.yml` to your docker command.
+If you want to develop in docker with autoreload add `-f docker/docker-compose.dev.yml` to your docker command.
 Like this:
 
 ```bash
-docker-compose -f k8s/docker-compose.yml -f k8s/docker-compose.dev.yml --project-directory . up --build
+docker-compose -f docker/docker-compose.yml -f docker/docker-compose.dev.yml --project-directory . up --build
 ```
 
 This command exposes the web application on port 8000, mounts current directory and enables autoreload.
@@ -39,7 +39,7 @@ This command exposes the web application on port 8000, mounts current directory 
 But you have to rebuild image every time you modify `poetry.lock` or `pyproject.toml` with this command:
 
 ```bash
-docker-compose -f k8s/docker-compose.yml --project-directory . build
+docker-compose -f docker/docker-compose.yml --project-directory . build
 ```
 
 ## Project structure
@@ -85,12 +85,12 @@ You can read more about BaseSettings class here: https://pydantic-docs.helpmanua
 ## OpenTelemetry
 
 If you want to start your project with OpenTelemetry collector
-you can add `-f ./k8s/docker-compose.otlp.yml` to your docker command.
+you can add `-f ./docker/docker-compose.otlp.yml` to your docker command.
 
 Like this:
 
 ```bash
-docker-compose -f k8s/docker-compose.yml -f k8s/docker-compose.otlp.yml --project-directory . up
+docker-compose -f docker/docker-compose.yml -f docker/docker-compose.otlp.yml --project-directory . up
 ```
 
 This command will start OpenTelemetry collector and jaeger.
@@ -127,8 +127,8 @@ You can read more about pre-commit here: https://pre-commit.com/
 If you want to run it in docker, simply run:
 
 ```bash
-docker-compose -f k8s/docker-compose.yml -f k8s/docker-compose.dev.yml --project-directory . run --build --rm api pytest -vv .
-docker-compose -f k8s/docker-compose.yml -f k8s/docker-compose.dev.yml --project-directory . down
+docker-compose -f docker/docker-compose.yml -f docker/docker-compose.dev.yml --project-directory . run --build --rm api pytest -vv .
+docker-compose -f docker/docker-compose.yml -f docker/docker-compose.dev.yml --project-directory . down
 ```
 
 For running tests on your local machine.

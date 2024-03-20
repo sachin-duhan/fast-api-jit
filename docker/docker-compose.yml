@@ -4,7 +4,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: ./k8s/Dockerfile
+      dockerfile: ./docker/Dockerfile
       target: prod
     image: auth_jit:${AUTH_JIT_VERSION:-latest}
     restart: always
