@@ -9,6 +9,7 @@ To run the project use this set of commands:
 
 ```bash
 # optional -> virtual env
+cp .env.example .env
 make install
 make run
 ```
