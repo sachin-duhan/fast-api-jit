@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 
 from auth_jit.web.api.echo.schema import Message
+from auth_jit.web.common.response import ApiResponse
 
 router = APIRouter()
 
@@ -15,4 +16,4 @@ async def send_echo_message(
     :param incoming_message: incoming message.
     :returns: message same as the incoming.
     """
-    return incoming_message
+    return ApiResponse(content=incoming_message)

@@ -1,5 +1,7 @@
 from fastapi import APIRouter
 
+from auth_jit.web.common.response import ApiResponse
+
 router = APIRouter()
 
 
@@ -10,3 +12,4 @@ def health_check() -> None:
 
     It returns 200 if the project is healthy.
     """
+    return ApiResponse()

@@ -2,8 +2,7 @@
 Just-in-Time (JIT) authentication using tokens for backend APIs
 
 ## Poetry
-This project uses poetry. It's a modern dependency management
-tool.
+This project uses poetry. It's a modern dependency management tool.
 
 To run the project use this set of commands:
 
